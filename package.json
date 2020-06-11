@@ -2,8 +2,13 @@
   "name": "fastify-schema-to-typescript",
   "version": "0.0.1",
   "description": "Convert json schema for Fastify to typescript interface",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "bin": {
+    "fastify-schema-to-typescript": "./dist/index.js"
+  },
   "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,11 +24,23 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "husky": "^4.2.5"
+    "@types/glob": "^7.1.2",
+    "@types/node": "^14.0.13",
+    "husky": "^4.2.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --extends @commitlint/config-conventional"
     }
+  },
+  "dependencies": {
+    "commander": "^5.1.0",
+    "glob": "^7.1.6",
+    "json-schema-to-typescript": "^9.1.0"
+  },
+  "peerDependencies": {
+    "fastify": "^2.14.1"
   }
 }
