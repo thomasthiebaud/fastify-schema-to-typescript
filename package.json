@@ -1,0 +1,19 @@
+{
+  "name": "fastify-schema-to-typescript",
+  "version": "0.0.1",
+  "description": "Convert json schema for Fastify to typescript interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasthiebaud/fastify-schema-to-typescript.git"
+  },
+  "author": "Thomas Thiebaud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasthiebaud/fastify-schema-to-typescript/issues"
+  },
+  "homepage": "https://github.com/thomasthiebaud/fastify-schema-to-typescript#readme"
+}
