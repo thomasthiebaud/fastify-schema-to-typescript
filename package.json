@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/thomasthiebaud/fastify-schema-to-typescript/issues"
   },
-  "homepage": "https://github.com/thomasthiebaud/fastify-schema-to-typescript#readme"
+  "homepage": "https://github.com/thomasthiebaud/fastify-schema-to-typescript#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --extends @commitlint/config-conventional"
+    }
+  }
 }
