@@ -27,13 +27,17 @@ export { default as schema } from './${parsedPath.base}'
 export interface ${prefix}Reply extends FastifyReply<ServerResponse | Http2ServerResponse> {}
 
 ${await compile(schema.params || defaultSchema, prefix + "Params", opts)}
-${await compile(schema.querystring || defaultSchema, prefix + "Query", opts)}
+${await compile(
+  schema.querystring || schema.query || defaultSchema,
+  prefix + "Query",
+  opts
+)}
 ${await compile(schema.body || defaultSchema, prefix + "Body", opts)}
 ${await compile(schema.headers || defaultSchema, prefix + "Headers", opts)}
 
 export interface ${prefix}Request extends FastifyRequest {
   params: ${prefix}Params,
-  querystring: ${prefix}Query,
+  query: ${prefix}Query,
   body: ${prefix}Body,
   headers: ${prefix}Headers,
 }
