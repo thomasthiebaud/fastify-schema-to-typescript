@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.2...v1.0.3) (2020-06-12)
+
+
+### Bug Fixes
+
+* support both query and querystring validation ([070ee30](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/070ee30f4c8cec6f9613ed383c2f676f309ad3fb))
+
 ## [1.0.2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.1...v1.0.2) (2020-06-12)
 
 
