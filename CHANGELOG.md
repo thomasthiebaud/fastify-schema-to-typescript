@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.1...v1.0.2) (2020-06-12)
+
+
+### Bug Fixes
+
+* setup npmignore to include dist folder ([1bf510c](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/1bf510ce7d1a676f7149a040981a909f99e8baae))
+
 ## [1.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.0...v1.0.1) (2020-06-12)
 
 
