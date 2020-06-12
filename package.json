@@ -2,9 +2,9 @@
   "name": "fastify-schema-to-typescript",
   "version": "1.0.0",
   "description": "Convert json schema for Fastify to typescript interface",
-  "main": "./dist/fastify-schema-to-typescript.js",
+  "main": "./dist/index.js",
   "bin": {
-    "fastify-schema-to-typescript": "./dist/fastify-schema-to-typescript.js"
+    "fastify-schema-to-typescript": "./bin/fastify-schema-to-typescript.js"
   },
   "scripts": {
     "clean": "rimraf ./dist",

@@ -1,4 +1,3 @@
-import { program } from "commander";
 import glob from "glob";
 import path from "path";
 import fs from "fs";
@@ -46,7 +45,7 @@ export interface ${prefix}Request extends FastifyRequest {
   );
 }
 
-function convert(globString: string, prefix: string) {
+export function convert(globString: string, prefix: string) {
   const filePaths = glob.sync(globString);
   filePaths.forEach((filePath) => {
     const parsedPath = path.parse(filePath);
@@ -54,15 +53,3 @@ function convert(globString: string, prefix: string) {
     writeFile(parsedPath, prefix, schema);
   });
 }
-
-program
-  .option(
-    "-g, --glob <value>",
-    "glob matching JSON schema to convert",
-    "src/**/schema.json"
-  )
-  .option("-p, --prefix <value>", "prefix to use before interfaces' name", "");
-
-program.parse(process.argv);
-
-convert(program.glob, program.prefix);
