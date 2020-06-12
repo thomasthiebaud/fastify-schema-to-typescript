@@ -22,9 +22,7 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { ServerResponse } from "http"
 import { Http2ServerResponse } from "http2"
 
-export { default as schema } from './${parsedPath.base}'
-
-export interface ${prefix}Reply extends FastifyReply<ServerResponse | Http2ServerResponse> {}
+import schema from './${parsedPath.base}'
 
 ${await compile(schema.params || defaultSchema, prefix + "Params", opts)}
 ${await compile(
@@ -35,12 +33,16 @@ ${await compile(
 ${await compile(schema.body || defaultSchema, prefix + "Body", opts)}
 ${await compile(schema.headers || defaultSchema, prefix + "Headers", opts)}
 
-export interface ${prefix}Request extends FastifyRequest {
+interface ${prefix}Reply extends FastifyReply<ServerResponse | Http2ServerResponse> {}
+
+interface ${prefix}Request extends FastifyRequest {
   params: ${prefix}Params,
   query: ${prefix}Query,
   body: ${prefix}Body,
   headers: ${prefix}Headers,
 }
+
+export { schema, Reply, Request }
   `;
 
   fs.writeFileSync(
