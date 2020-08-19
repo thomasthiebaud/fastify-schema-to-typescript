@@ -10,11 +10,11 @@ async function generateReplyInterfaces(prefix: string, replies = {}) {
   const generatedInterfaces = [];
   const generatedReplyNames = [];
   for (const [replyCode, replySchema] of Object.entries<any>(replies)) {
-    generatedReplyNames.push(prefix + "Reply" + replyCode);
+    generatedReplyNames.push(prefix + "Reply" + replyCode.toUpperCase());
     generatedInterfaces.push(
       await compile(
         replySchema || defaultSchema,
-        prefix + "Reply" + replyCode,
+        prefix + "Reply" + replyCode.toUpperCase(),
         opts
       )
     );
@@ -23,7 +23,7 @@ async function generateReplyInterfaces(prefix: string, replies = {}) {
   return `
 ${generatedInterfaces.join("\n")}
 
-interface ${prefix}Reply = ${generatedReplyNames.join(" | ")}
+type ${prefix}Reply = ${generatedReplyNames.join(" | ")}
 `;
 }
 
