@@ -10,11 +10,11 @@ async function generateReplyInterfaces(prefix: string, replies = {}) {
   const generatedInterfaces = [];
   const generatedReplyNames = [];
   for (const [replyCode, replySchema] of Object.entries<any>(replies)) {
-    generatedReplyNames.push(prefix + replyCode + "Reply");
+    generatedReplyNames.push(prefix + "Reply" + replyCode);
     generatedInterfaces.push(
       await compile(
         replySchema || defaultSchema,
-        prefix + replyCode + "Reply",
+        prefix + "Reply" + replyCode,
         opts
       )
     );
