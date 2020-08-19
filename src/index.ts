@@ -6,10 +6,13 @@ import { compile } from "json-schema-to-typescript";
 const opts = { bannerComment: "" };
 const defaultSchema = { type: "object", additionalProperties: false };
 
-async function generateReplyInterfaces(prefix: string, replies = {}) {
+export async function generateReplyInterfaces(
+  prefix: string,
+  replies: Record<any, any> = {}
+) {
   const generatedInterfaces = [];
   const generatedReplyNames = [];
-  for (const [replyCode, replySchema] of Object.entries<any>(replies)) {
+  for (const [replyCode, replySchema] of Object.entries(replies)) {
     generatedReplyNames.push(prefix + "Reply" + replyCode.toUpperCase());
     generatedInterfaces.push(
       await compile(
@@ -22,9 +25,8 @@ async function generateReplyInterfaces(prefix: string, replies = {}) {
 
   return `
 ${generatedInterfaces.join("\n")}
-
-type ${prefix}Reply = ${generatedReplyNames.join(" | ")}
-`;
+type ${prefix}Reply = ${generatedReplyNames.join(" | ") || "{}"}
+`.trim();
 }
 
 async function writeFile(
