@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.4...v2.0.0) (2020-08-19)
+
+
+### Features
+
+* generate interfaces for Reply ([ecbc712](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/ecbc71271437918628f36478ac04b30334ff5bb9))
+
+
+### BREAKING CHANGES
+
+* Drop support for fastify v2
+
 ## [1.0.4](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.3...v1.0.4) (2020-06-12)
 
 
