@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.0.1...v2.0.2) (2020-08-19)
+
+
+### Bug Fixes
+
+* uppercase reply code ([080d525](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/080d5258d70fd89a48f9540e5b2a516639b72edc))
+
 ## [2.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.0.0...v2.0.1) (2020-08-19)
 
 
