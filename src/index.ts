@@ -6,6 +6,27 @@ import { compile } from "json-schema-to-typescript";
 const opts = { bannerComment: "" };
 const defaultSchema = { type: "object", additionalProperties: false };
 
+async function generateReplyInterfaces(prefix: string, replies = {}) {
+  const generatedInterfaces = [];
+  const generatedReplyNames = [];
+  for (const [replyCode, replySchema] of Object.entries<any>(replies)) {
+    generatedReplyNames.push(prefix + replyCode + "Reply");
+    generatedInterfaces.push(
+      await compile(
+        replySchema || defaultSchema,
+        prefix + replyCode + "Reply",
+        opts
+      )
+    );
+  }
+
+  return `
+${generatedInterfaces.join("\n")}
+
+interface ${prefix}Reply = ${generatedReplyNames.join(" | ")}
+`;
+}
+
 async function writeFile(
   parsedPath: path.ParsedPath,
   prefix: string,
@@ -18,9 +39,7 @@ async function writeFile(
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { FastifyReply, FastifyRequest } from 'fastify'
-import { ServerResponse } from "http"
-import { Http2ServerResponse } from "http2"
+import { RouteHandler } from "fastify"
 
 import schema from './${parsedPath.base}'
 
@@ -32,17 +51,17 @@ ${await compile(
 )}
 ${await compile(schema.body || defaultSchema, prefix + "Body", opts)}
 ${await compile(schema.headers || defaultSchema, prefix + "Headers", opts)}
+${await generateReplyInterfaces(prefix, schema.response)}
 
-interface ${prefix}Reply extends FastifyReply<ServerResponse | Http2ServerResponse> {}
+type Handler = RouteHandler<{
+  Query: ${prefix}Query;
+  Body: ${prefix}Body;
+  Params: ${prefix}Params;
+  Headers: ${prefix}Headers;
+  Reply: ${prefix}Reply;
+}>;
 
-interface ${prefix}Request extends FastifyRequest {
-  params: ${prefix}Params,
-  query: ${prefix}Query,
-  body: ${prefix}Body,
-  headers: ${prefix}Headers,
-}
-
-export { schema, Reply, Request }
+export { Handler, schema }
   `;
 
   fs.writeFileSync(
