@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.0.0...v2.0.1) (2020-08-19)
+
+
+### Bug Fixes
+
+* move reply code at the end of reply interface ([4b8864d](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/4b8864d52681dd1d676c1008e9e3b72109a615fe))
+
 # [2.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v1.0.4...v2.0.0) (2020-08-19)
 
 
