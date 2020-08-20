@@ -10,6 +10,7 @@ const defaultSchema = { type: "object", additionalProperties: false };
 export interface Options {
   glob: string;
   prefix: string;
+  ext: string;
 }
 
 export async function generateReplyInterfaces(
@@ -86,9 +87,16 @@ export { ${options.prefix}Handler, schema }\
 `;
 }
 
-async function writeFile(parsedPath: path.ParsedPath, template: string) {
+async function writeFile(
+  parsedPath: path.ParsedPath,
+  template: string,
+  options: Options
+) {
   const write = promisify(fs.writeFile);
-  return write(path.join(parsedPath.dir, parsedPath.name + ".ts"), template);
+  return write(
+    path.join(parsedPath.dir, parsedPath.name + options.ext),
+    template
+  );
 }
 
 export async function convert(options: Options) {
@@ -97,6 +105,6 @@ export async function convert(options: Options) {
     const parsedPath = path.parse(filePath);
     const schema = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     const template = await generateInterfaces(parsedPath, schema, options);
-    await writeFile(parsedPath, template);
+    await writeFile(parsedPath, template, options);
   }
 }
