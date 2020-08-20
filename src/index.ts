@@ -55,7 +55,7 @@ ${await compile(schema.body || defaultSchema, prefix + "Body", opts)}
 ${await compile(schema.headers || defaultSchema, prefix + "Headers", opts)}
 ${await generateReplyInterfaces(prefix, schema.response)}
 
-type Handler = RouteHandler<{
+type ${prefix}Handler = RouteHandler<{
   Query: ${prefix}Query;
   Body: ${prefix}Body;
   Params: ${prefix}Params;
@@ -63,7 +63,7 @@ type Handler = RouteHandler<{
   Reply: ${prefix}Reply;
 }>;
 
-export { Handler, schema }
+export { ${prefix}Handler, schema }
   `;
 
   fs.writeFileSync(
