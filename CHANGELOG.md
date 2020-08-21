@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.0.2...v2.1.0) (2020-08-21)
+
+
+### Bug Fixes
+
+* add prefiix to Handler ([2b16e19](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/2b16e193471bc01b890cceeb4a8c94d152c56c8c))
+
+
+### Features
+
+* add file extension option ([23be300](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/23be300218a64f5a2d1059097fcd52dd6b969dd2))
+* validate prefix value ([e0080af](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/e0080af67af1bc04da2a1c0fa36038ad52a7a679))
+
 ## [2.0.2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.0.1...v2.0.2) (2020-08-19)
 
 
