@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.1.0...v2.1.1) (2020-08-25)
+
+
+### Bug Fixes
+
+* rename Query to Querystring ([72a6331](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/72a633117432804f41bdb98e2922df917bf219c4))
+
 # [2.1.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.0.2...v2.1.0) (2020-08-21)
 
 
