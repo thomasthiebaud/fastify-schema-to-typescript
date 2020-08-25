@@ -76,7 +76,7 @@ ${await compile(
 ${await generateReplyInterfaces(options.prefix, schema.response)}
 
 type ${options.prefix}Handler = RouteHandler<{
-  Query: ${options.prefix}Query;
+  Querystring: ${options.prefix}Query;
   Body: ${options.prefix}Body;
   Params: ${options.prefix}Params;
   Headers: ${options.prefix}Headers;
