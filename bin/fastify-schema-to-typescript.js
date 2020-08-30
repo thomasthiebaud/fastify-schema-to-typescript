@@ -38,8 +38,18 @@ program
     "file extension to use for generated files",
     parseExtension,
     ".ts"
+  )
+  .option(
+    "-m, --module <value>",
+    "module to import the RouteHandler type from",
+    "fastify"
   );
 
 program.parse(process.argv);
 
-convert({ glob: program.glob, prefix: program.prefix, ext: program.ext });
+convert({
+  glob: program.glob,
+  prefix: program.prefix,
+  ext: program.ext,
+  module: program.module,
+});

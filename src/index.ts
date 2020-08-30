@@ -11,6 +11,7 @@ export interface Options {
   glob: string;
   prefix: string;
   ext: string;
+  module: string;
 }
 
 export async function generateReplyInterfaces(
@@ -49,7 +50,7 @@ async function generateInterfaces(
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from "fastify"
+import { RouteHandler } from "${options.module}"
 
 import schema from './${parsedPath.base}'
 
