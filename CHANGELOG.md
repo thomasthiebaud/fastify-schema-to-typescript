@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.1.1...v2.2.0) (2020-08-30)
+
+
+### Features
+
+* add support to import RouteHandler from other modules ([e68312b](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/e68312b7b977bba10a0af040dd3d124c82a8de54))
+
 ## [2.1.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.1.0...v2.1.1) (2020-08-25)
 
 
