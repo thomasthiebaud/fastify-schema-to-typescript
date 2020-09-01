@@ -25,7 +25,7 @@ program
   .option(
     "-g, --glob <value>",
     "glob matching JSON schema to convert",
-    "src/**/schema.json"
+    "src/**/schema.(json|yaml|yml)"
   )
   .option(
     "-p, --prefix <value>",
