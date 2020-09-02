@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.2.0...v2.3.0) (2020-09-02)
+
+
+### Features
+
+* add support for yaml schema ([fb69fa9](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/fb69fa998e82432a92c20bc30080b5d2de63b572))
+
 # [2.2.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.1.1...v2.2.0) (2020-08-30)
 
 
