@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.3.1...v3.0.0) (2020-09-02)
+
+
+### Features
+
+* set additionalProperties to false by default unless set to true ([5b26168](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/5b261681eb64718c7d1203dafb5efebc8a07f2b2))
+
+
+### BREAKING CHANGES
+
+* additionalProperties is set to false by default
+
 ## [2.3.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.3.0...v2.3.1) (2020-09-02)
 
 
