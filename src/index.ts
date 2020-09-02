@@ -46,7 +46,7 @@ function importOrWriteSchema(
 ) {
   if (isYaml) {
     return `\
-const schema = ${schema}\
+const schema = ${JSON.stringify(schema, null, 2)}\
 `;
   } else {
     return `import schema from './${parsedPath.base}'`;
