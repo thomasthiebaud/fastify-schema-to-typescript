@@ -1,7 +1,8 @@
-import glob from "glob";
-import path from "path";
 import fs from "fs";
+import glob from "glob";
+import yaml from "js-yaml";
 import { compile } from "json-schema-to-typescript";
+import path from "path";
 import { promisify } from "util";
 
 const compileOptions = { bannerComment: "" };
@@ -37,10 +38,26 @@ type ${prefix}Reply = ${generatedReplyNames.join(" | ") || "{}"}
 `.trim();
 }
 
+function importOrWriteSchema(
+  parsedPath: path.ParsedPath,
+  schema: any,
+  options: Options,
+  isYaml: boolean
+) {
+  if (isYaml) {
+    return `\
+const schema = ${schema}\
+`;
+  } else {
+    return `import schema from './${parsedPath.base}'`;
+  }
+}
+
 async function generateInterfaces(
   parsedPath: path.ParsedPath,
   schema: any,
-  options: Options
+  options: Options,
+  isYaml = false
 ) {
   return `\
 /* tslint:disable */
@@ -52,7 +69,7 @@ async function generateInterfaces(
 
 import { RouteHandler } from "${options.module}"
 
-import schema from './${parsedPath.base}'
+${importOrWriteSchema(parsedPath, schema, options, isYaml)}
 
 ${await compile(
   schema.params || defaultSchema,
@@ -104,8 +121,19 @@ export async function convert(options: Options) {
   const filePaths = glob.sync(options.glob);
   for (const filePath of filePaths) {
     const parsedPath = path.parse(filePath);
-    const schema = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const template = await generateInterfaces(parsedPath, schema, options);
-    await writeFile(parsedPath, template, options);
+    if (parsedPath.ext === ".yaml" || parsedPath.ext === ".yml") {
+      const schema = yaml.safeLoad(fs.readFileSync(filePath, "utf-8"));
+      const template = await generateInterfaces(
+        parsedPath,
+        schema,
+        options,
+        true
+      );
+      await writeFile(parsedPath, template, options);
+    } else {
+      const schema = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      const template = await generateInterfaces(parsedPath, schema, options);
+      await writeFile(parsedPath, template, options);
+    }
   }
 }
