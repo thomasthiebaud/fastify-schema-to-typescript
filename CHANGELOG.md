@@ -1,3 +1,11 @@
+## [2.3.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.3.0...v2.3.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* dump schema correctly ([85a21cf](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/85a21cfefc2d3bda10e17ca94ac0d0ea46183e13))
+* fix glob to include correct extensions ([562982e](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/562982efcb0618c6080131d9661cf1886f2a8ab8))
+
 # [2.3.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.2.0...v2.3.0) (2020-09-02)
 
 
