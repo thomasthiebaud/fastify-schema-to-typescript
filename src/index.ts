@@ -1,11 +1,11 @@
 import fs from "fs";
 import glob from "glob";
 import yaml from "js-yaml";
-import { compile } from "json-schema-to-typescript";
+import { compile, Options as CompilerOptions } from "json-schema-to-typescript";
 import path from "path";
 import { promisify } from "util";
 
-const compileOptions = { bannerComment: "" };
+const compileOptions: Partial<CompilerOptions> = { bannerComment: "" };
 const defaultSchema = { type: "object", additionalProperties: false };
 
 export interface Options {
@@ -13,6 +13,13 @@ export interface Options {
   prefix: string;
   ext: string;
   module: string;
+}
+
+function addDefaultValueToSchema(schema: any) {
+  return {
+    ...schema,
+    additionalProperties: schema.additionalProperties || false,
+  };
 }
 
 export async function generateReplyInterfaces(
@@ -25,7 +32,7 @@ export async function generateReplyInterfaces(
     generatedReplyNames.push(prefix + "Reply" + replyCode.toUpperCase());
     generatedInterfaces.push(
       await compile(
-        replySchema || defaultSchema,
+        addDefaultValueToSchema(replySchema || defaultSchema),
         prefix + "Reply" + replyCode.toUpperCase(),
         compileOptions
       )
@@ -72,17 +79,17 @@ import { RouteHandler } from "${options.module}"
 ${importOrWriteSchema(parsedPath, schema, options, isYaml)}
 
 ${await compile(
-  schema.params || defaultSchema,
+  addDefaultValueToSchema(schema.params || defaultSchema),
   options.prefix + "Params",
   compileOptions
 )}
 ${await compile(
-  schema.querystring || schema.query || defaultSchema,
+  addDefaultValueToSchema(schema.querystring || schema.query || defaultSchema),
   options.prefix + "Query",
   compileOptions
 )}
 ${await compile(
-  schema.body || defaultSchema,
+  addDefaultValueToSchema(schema.body || defaultSchema),
   options.prefix + "Body",
   compileOptions
 )}
