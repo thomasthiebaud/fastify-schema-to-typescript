@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.0.0...v3.0.1) (2020-09-03)
+
+
+### Bug Fixes
+
+* write schemas both for yaml and json files ([bff78ca](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/bff78caeae83123dfafbd04fb9d43f5a69ad6ef1))
+
 # [3.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v2.3.1...v3.0.0) (2020-09-02)
 
 
