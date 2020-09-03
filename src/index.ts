@@ -45,27 +45,13 @@ type ${prefix}Reply = ${generatedReplyNames.join(" | ") || "{}"}
 `.trim();
 }
 
-function importOrWriteSchema(
-  parsedPath: path.ParsedPath,
-  schema: any,
-  options: Options,
-  isYaml: boolean
-) {
-  if (isYaml) {
-    return `\
+function writeSchema(schema: any) {
+  return `\
 const schema = ${JSON.stringify(schema, null, 2)}\
 `;
-  } else {
-    return `import schema from './${parsedPath.base}'`;
-  }
 }
 
-async function generateInterfaces(
-  parsedPath: path.ParsedPath,
-  schema: any,
-  options: Options,
-  isYaml = false
-) {
+async function generateInterfaces(schema: any, options: Options) {
   return `\
 /* tslint:disable */
 /* eslint-disable */
@@ -76,7 +62,7 @@ async function generateInterfaces(
 
 import { RouteHandler } from "${options.module}"
 
-${importOrWriteSchema(parsedPath, schema, options, isYaml)}
+${writeSchema(schema)}
 
 ${await compile(
   addDefaultValueToSchema(schema.params || defaultSchema),
@@ -128,19 +114,18 @@ export async function convert(options: Options) {
   const filePaths = glob.sync(options.glob);
   for (const filePath of filePaths) {
     const parsedPath = path.parse(filePath);
-    if (parsedPath.ext === ".yaml" || parsedPath.ext === ".yml") {
-      const schema = yaml.safeLoad(fs.readFileSync(filePath, "utf-8"));
-      const template = await generateInterfaces(
-        parsedPath,
-        schema,
-        options,
-        true
-      );
-      await writeFile(parsedPath, template, options);
-    } else {
-      const schema = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      const template = await generateInterfaces(parsedPath, schema, options);
-      await writeFile(parsedPath, template, options);
+    try {
+      if (parsedPath.ext === ".yaml" || parsedPath.ext === ".yml") {
+        const schema = yaml.safeLoad(fs.readFileSync(filePath, "utf-8"));
+        const template = await generateInterfaces(schema, options);
+        await writeFile(parsedPath, template, options);
+      } else {
+        const schema = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+        const template = await generateInterfaces(schema, options);
+        await writeFile(parsedPath, template, options);
+      }
+    } catch (err) {
+      console.error(`Failed to process file ${parsedPath}`);
     }
   }
 }
