@@ -86,15 +86,17 @@ ${await compile(
 )}
 ${await generateReplyInterfaces(options.prefix, schema.response)}
 
-type ${options.prefix}Handler = RouteHandler<{
+type ${options.prefix}RouteGeneric = {
   Querystring: ${options.prefix}Query;
   Body: ${options.prefix}Body;
   Params: ${options.prefix}Params;
   Headers: ${options.prefix}Headers;
   Reply: ${options.prefix}Reply;
-}>;
+}
 
-export { ${options.prefix}Handler, schema }\
+type ${options.prefix}Handler = RouteHandler<${options.prefix}RouteGeneric>;
+
+export { ${options.prefix}Handler, ${options.prefix}RouteGeneric, schema }\
 `;
 }
 
