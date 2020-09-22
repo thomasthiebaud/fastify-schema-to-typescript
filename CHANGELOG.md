@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.0.1...v3.1.0) (2020-09-22)
+
+
+### Features
+
+* export RouteGeneric ([07f7c49](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/07f7c49ce55f1e45de09b875fdc6adebc4670f35))
+
 ## [3.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.0.0...v3.0.1) (2020-09-03)
 
 
