@@ -127,7 +127,9 @@ export async function convert(options: Options) {
         await writeFile(parsedPath, template, options);
       }
     } catch (err) {
-      console.error(`Failed to process file ${parsedPath}`);
+      console.error(
+        `Failed to process file ${filePath} with error ${JSON.stringify(err)}`
+      );
     }
   }
 }
