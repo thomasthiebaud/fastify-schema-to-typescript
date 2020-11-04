@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-const { program } = require("commander");
-const { convert } = require("../dist/index");
+import { program } from "commander";
 
-function parsePrefix(value) {
+import { convert, defaultOptions } from "./schema";
+
+function parsePrefix(value: string) {
   if (!value.match(/^\w/i)) {
     console.error("Prefix needs to start with a letter");
     process.exit(-1);
@@ -12,7 +13,7 @@ function parsePrefix(value) {
   return value;
 }
 
-function parseExtension(value) {
+function parseExtension(value: string) {
   if (!value.match(/^\./)) {
     console.error('File extension needs to start with a "."');
     process.exit(-1);
@@ -25,24 +26,24 @@ program
   .option(
     "-g, --glob <value>",
     "glob matching JSON schema to convert",
-    "src/**/schema.{json,yaml,yml}"
+    defaultOptions.glob
   )
   .option(
     "-p, --prefix <value>",
     "prefix to use before interfaces' name",
     parsePrefix,
-    ""
+    defaultOptions.prefix
   )
   .option(
     "-e, --ext <value>",
     "file extension to use for generated files",
     parseExtension,
-    ".ts"
+    defaultOptions.ext
   )
   .option(
     "-m, --module <value>",
     "module to import the RouteHandler type from",
-    "fastify"
+    defaultOptions.module
   );
 
 program.parse(process.argv);
