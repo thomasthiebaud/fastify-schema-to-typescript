@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.1.1...v3.2.0) (2020-11-04)
+
+
+### Features
+
+* support definitions ([e73f0d1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/e73f0d1b653256bc2d1c1d0ec64f6340a02348d0))
+
 ## [3.1.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.1.0...v3.1.1) (2020-10-23)
 
 
