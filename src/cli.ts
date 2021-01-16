@@ -47,10 +47,11 @@ program
   );
 
 program.parse(process.argv);
+const options = program.opts();
 
 convert({
-  glob: program.glob,
-  prefix: program.prefix,
-  ext: program.ext,
-  module: program.module,
+  glob: options.glob,
+  prefix: options.prefix,
+  ext: options.ext,
+  module: options.module,
 });
