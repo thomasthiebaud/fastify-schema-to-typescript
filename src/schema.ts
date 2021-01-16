@@ -159,7 +159,7 @@ export async function convert(options: Options) {
     const parsedPath = path.parse(filePath);
     try {
       if (parsedPath.ext === ".yaml" || parsedPath.ext === ".yml") {
-        const schema = yaml.safeLoad(fs.readFileSync(filePath, "utf-8"));
+        const schema = yaml.load(fs.readFileSync(filePath, "utf-8"));
         const template = await generateInterfaces(schema, options);
         await writeFile(parsedPath, template, options);
       } else {
