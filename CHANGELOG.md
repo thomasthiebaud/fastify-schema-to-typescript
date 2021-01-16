@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.0...v3.2.1) (2021-01-16)
+
+
+### Bug Fixes
+
+* change bin entry point ([693fad2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/693fad253fcc0f426909b532993aae4c112116e8))
+
 # [3.2.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.1.1...v3.2.0) (2020-11-04)
 
 
