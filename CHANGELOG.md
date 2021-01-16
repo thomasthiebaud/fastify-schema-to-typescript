@@ -1,3 +1,11 @@
+## [3.2.2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.1...v3.2.2) (2021-01-16)
+
+
+### Bug Fixes
+
+* update commander correctly ([b31f5ce](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/b31f5ce762f310a50880a282b5f1f3be28721839))
+* update dependencies ([456d327](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/456d3276c5b2fbe8059066f350ca4b01aa893b30))
+
 ## [3.2.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.0...v3.2.1) (2021-01-16)
 
 
