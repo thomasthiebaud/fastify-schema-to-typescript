@@ -4,7 +4,7 @@
   "description": "Convert json schema for Fastify to typescript interface",
   "main": "./dist/index.js",
   "bin": {
-    "fastify-schema-to-typescript": "./dist/cli.js"
+    "fastify-schema-to-typescript": "./dist/src/cli.js"
   },
   "scripts": {
     "clean": "rimraf ./dist",
