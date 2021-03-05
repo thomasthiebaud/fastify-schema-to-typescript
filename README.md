@@ -2,7 +2,7 @@
 
 ## How to install?
 
-```
+```sh
 npm i -D fastify-schema-to-typescript
 ```
 
@@ -11,7 +11,7 @@ npm i -D fastify-schema-to-typescript
 Running `npx fastify-schema-to-typescript` will convert all `schema.json` files in `src` to `schema.ts`.
 You can then import `schema.ts` directly
 
-```
+```ts
 import { Handler, schema } from "./schema";
 
 export const options = {
@@ -27,7 +27,7 @@ export const handler: Handler = async (request, reply) => {}
 
 More options are available
 
-```
+```sh
 npx fastify-schema-to-typescript -h
 
 Usage: fastify-schema-to-typescript [options]
@@ -62,7 +62,7 @@ Running `npx fastify-schema-to-typescript` will convert `schema.yaml` to `schema
 
 app.ts
 
-```
+```ts
 import fastify from 'fastify';
 import { healthcheck } from './api'
 
@@ -78,13 +78,13 @@ run();
 
 api/index.ts
 
-```
+```ts
 export * from './healthcheck';
 ```
 
 api/healtheck/schema.yaml
 
-```
+```yml
 headers:
   type: object
   properties:
@@ -108,7 +108,7 @@ params:
 
 api/healtheck/index.ts
 
-```
+```ts
 import { FastifyPluginAsync } from 'fastify';
 import { RouteGeneric, schema } from './schema';
 
