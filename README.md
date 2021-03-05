@@ -33,9 +33,10 @@ npx fastify-schema-to-typescript -h
 Usage: fastify-schema-to-typescript [options]
 
 Options:
-  -g, --glob <value>    glob matching JSON schema to convert (default: "src/**/schema.json")
+  -g, --glob <value>    glob matching JSON schema to convert (default: "src/**/schema.{json,yaml,yml}")
   -p, --prefix <value>  prefix to use before interfaces' name (default: "")
   -e, --ext <value>     file extension to use for generated files (default: ".ts")
+  -m, --module <value>  module to import the RouteHandler type from (default: "fastify")
   -h, --help            display help for command
 ```
 
