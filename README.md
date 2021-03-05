@@ -22,7 +22,7 @@ export const options = {
   },
 };
 
-export const handler: Handler = async (request, reply) => {}
+export const handler: Handler = async (request, reply) => {};
 ```
 
 More options are available
@@ -63,8 +63,8 @@ Running `npx fastify-schema-to-typescript` will convert `schema.yaml` to `schema
 app.ts
 
 ```ts
-import fastify from 'fastify';
-import { healthcheck } from './api'
+import fastify from "fastify";
+import { healthcheck } from "./api";
 
 export async function run() {
   const app = fastify();
@@ -79,7 +79,7 @@ run();
 api/index.ts
 
 ```ts
-export * from './healthcheck';
+export * from "./healthcheck";
 ```
 
 api/healtheck/schema.yaml
@@ -87,33 +87,29 @@ api/healtheck/schema.yaml
 ```yml
 headers:
   type: object
-  properties:
-    ...
+  properties: ...
 
 body:
   type: object
-  properties:
-    ...
+  properties: ...
 
 query:
   type: object
-  properties:
-    ...
+  properties: ...
 
 params:
   type: object
-  properties:
-    ...
+  properties: ...
 ```
 
 api/healtheck/index.ts
 
 ```ts
-import { FastifyPluginAsync } from 'fastify';
-import { RouteGeneric, schema } from './schema';
+import { FastifyPluginAsync } from "fastify";
+import { RouteGeneric, schema } from "./schema";
 
 export const getHealthcheck: FastifyPluginAsync = async (app) => {
-  app.get<RouteGeneric>('/healthcheck', { schema }, async () => {
+  app.get<RouteGeneric>("/healthcheck", { schema }, async () => {
     return { ok: true };
   });
 };
