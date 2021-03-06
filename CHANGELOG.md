@@ -1,3 +1,10 @@
+## [3.2.4](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.3...v3.2.4) (2021-03-06)
+
+
+### Bug Fixes
+
+* disable postinstall on user machine ([fb8f398](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/fb8f3988eba11e2515e5ecfc87153f68982bf6ca))
+
 ## [3.2.3](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.2...v3.2.3) (2021-03-05)
 
 
