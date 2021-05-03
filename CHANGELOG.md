@@ -1,3 +1,10 @@
+## [3.2.6](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.5...v3.2.6) (2021-05-03)
+
+
+### Bug Fixes
+
+* update CI to use node LTS ([53be9e3](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/53be9e38224dcfd3ca4db600b6af0ff32f68c1e5))
+
 ## [3.2.5](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.4...v3.2.5) (2021-03-29)
 
 
