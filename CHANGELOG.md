@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.8...v4.0.0) (2021-08-17)
+
+
+### Bug Fixes
+
+* update dependencies ([0afa3eb](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/0afa3eba33bfa2a60a19a0b7adaf6a1976c8fa01))
+
+
+### BREAKING CHANGES
+
+* requires node >= 12
+
 ## [3.2.8](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.7...v3.2.8) (2021-06-08)
 
 

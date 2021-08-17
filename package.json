@@ -1,6 +1,6 @@
 {
   "name": "fastify-schema-to-typescript",
-  "version": "3.2.8",
+  "version": "4.0.0",
   "description": "Convert json schema for Fastify to typescript interface",
   "main": "./dist/index.js",
   "bin": {
