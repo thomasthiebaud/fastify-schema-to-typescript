@@ -12,9 +12,9 @@ Running `npx fastify-schema-to-typescript` will convert all `schema.json` files 
 You can then import `schema.ts` directly
 
 ```ts
-import { Handler, schema } from "./schema";
+import { RouteGeneric, schema } from "./schema";
 
-export const options = {
+const options = {
   schema: {
     params: schema.params,
     body: schema.body,
@@ -22,7 +22,9 @@ export const options = {
   },
 };
 
-export const handler: Handler = async (request, reply) => {};
+app.get<RouteGeneric>("/healthcheck", options, async () => {
+  return { ok: true };
+});
 ```
 
 More options are available
@@ -50,7 +52,7 @@ package.json
 src/
   app.ts
   api/
-    healtheck/
+    healthcheck/
       index.ts
       schema.yaml
     anotherEndpoint/
@@ -59,7 +61,7 @@ src/
     ...
 ```
 
-Running `npx fastify-schema-to-typescript` will convert `schema.yaml` to `schema.ts` that you can then you in your apps like that
+Running `npx fastify-schema-to-typescript` will convert `schema.yaml` to `schema.ts` that you can then import in your apps like that
 
 app.ts
 
@@ -83,7 +85,7 @@ api/index.ts
 export * from "./healthcheck";
 ```
 
-api/healtheck/schema.yaml
+api/healthcheck/schema.yaml
 
 ```yml
 headers:
@@ -103,7 +105,7 @@ params:
   properties: ...
 ```
 
-api/healtheck/index.ts
+api/healthcheck/index.ts
 
 ```ts
 import { FastifyPluginAsync } from "fastify";
@@ -116,7 +118,7 @@ export const getHealthcheck: FastifyPluginAsync = async (app) => {
 };
 ```
 
-I usually add the following in my package.json so I'm sure the code is in syn with the schemas
+I usually add the following in my package.json so I'm sure the code is in sync with the schemas
 
 package.json
 
@@ -132,7 +134,7 @@ package.json
 }
 ```
 
-and I also update `.gitignore` to not include the generate `schema.ts`
+and I also update `.gitignore` to not include the generated `schema.ts`
 
 .gitignore
 
