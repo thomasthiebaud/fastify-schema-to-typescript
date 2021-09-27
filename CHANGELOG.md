@@ -1,3 +1,13 @@
+# [5.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v4.0.0...v5.0.0) (2021-09-27)
+
+
+* feat!: drop support for node 12 ([4db53f8](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/4db53f8893d3d216a4c3cba2fd79a15680350f38))
+
+
+### BREAKING CHANGES
+
+* we're dropping support for nodejs 12. Minimum version required is now 14 (LTS)
+
 # [4.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v3.2.8...v4.0.0) (2021-08-17)
 
 
