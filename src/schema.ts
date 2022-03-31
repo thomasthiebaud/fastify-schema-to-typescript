@@ -10,11 +10,22 @@ import { capitalize, writeFile } from "./utils";
 const compileOptions: Partial<CompilerOptions> = { bannerComment: "" };
 const defaultSchema = { type: "object", additionalProperties: false };
 
-function addDefaultValueToSchema(schema: any) {
-  return {
-    ...schema,
-    additionalProperties: schema.additionalProperties || false,
-  };
+export function addDefaultValueToSchema(
+  schema: Record<string, any>
+): Record<string, any> {
+  return Object.entries(schema).reduce((acc, [key, value]) => {
+    if (value !== null && typeof value == "object") {
+      acc[key] = addDefaultValueToSchema(value);
+    } else {
+      acc[key] = value;
+    }
+
+    if (key === "properties" && !acc.additionalProperties) {
+      acc.additionalProperties = false;
+    }
+
+    return acc;
+  }, {} as any);
 }
 
 export const defaultOptions = {
