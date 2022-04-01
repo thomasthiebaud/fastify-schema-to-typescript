@@ -445,4 +445,42 @@ describe("#addDefaultValueToSchema", () => {
       additionalProperties: true,
     });
   });
+
+  it("should allow both objects and lists", () => {
+    const res = addDefaultValueToSchema({
+      properties: {
+        success: {
+          type: "object",
+          required: ["ok"],
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+    });
+
+    expect(res).toEqual({
+      properties: {
+        success: {
+          type: "object",
+          required: ["ok"],
+          additionalProperties: false,
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+      additionalProperties: false,
+    });
+  });
 });
