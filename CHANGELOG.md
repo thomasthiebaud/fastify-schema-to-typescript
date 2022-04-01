@@ -1,3 +1,11 @@
+## [5.0.2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.0.1...v5.0.2) (2022-04-01)
+
+
+### Bug Fixes
+
+* add default values to nested schema ([9c354ae](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/9c354ae59fcd81cb8789d15fdcd767542b9f9e44))
+* handle arrays correctly ([00c5a35](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/00c5a35f2de7e5bd61d41fa7e56e2b84ce30e411))
+
 ## [5.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.0.0...v5.0.1) (2022-01-06)
 
 
