@@ -3,6 +3,7 @@ import {
   generateReplyInterfaces,
   generateInterfaces,
   defaultOptions,
+  addDefaultValueToSchema,
 } from "../src/schema";
 
 describe("#generateReplyInterfaces", () => {
@@ -342,5 +343,144 @@ describe("#generateInterfaces", () => {
         defaultOptions
       )
     ).toMatchSnapshot();
+  });
+});
+
+describe("#addDefaultValueToSchema", () => {
+  it("should add default values to schema", () => {
+    const res = addDefaultValueToSchema({
+      properties: {
+        success: {
+          type: "string",
+        },
+        message: {
+          type: "string",
+        },
+      },
+    });
+
+    expect(res).toEqual({
+      properties: {
+        success: {
+          type: "string",
+        },
+        message: {
+          type: "string",
+        },
+      },
+      additionalProperties: false,
+    });
+  });
+
+  it("should add default values to nested schema", () => {
+    const res = addDefaultValueToSchema({
+      properties: {
+        success: {
+          type: "object",
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+    });
+
+    expect(res).toEqual({
+      properties: {
+        success: {
+          type: "object",
+          additionalProperties: false,
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+      additionalProperties: false,
+    });
+  });
+
+  it("should not overide values if already present", () => {
+    const res = addDefaultValueToSchema({
+      properties: {
+        success: {
+          type: "object",
+          additionalProperties: true,
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+      additionalProperties: true,
+    });
+
+    expect(res).toEqual({
+      properties: {
+        success: {
+          type: "object",
+          additionalProperties: true,
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+      additionalProperties: true,
+    });
+  });
+
+  it("should allow both objects and lists", () => {
+    const res = addDefaultValueToSchema({
+      properties: {
+        success: {
+          type: "object",
+          required: ["ok"],
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+    });
+
+    expect(res).toEqual({
+      properties: {
+        success: {
+          type: "object",
+          required: ["ok"],
+          additionalProperties: false,
+          properties: {
+            ok: {
+              type: "boolean",
+            },
+          },
+        },
+        message: {
+          type: "string",
+        },
+      },
+      additionalProperties: false,
+    });
   });
 });
