@@ -57,6 +57,6 @@
     "json-schema-to-typescript": "^10.1.5"
   },
   "peerDependencies": {
-    "fastify": "^3.21.6"
+    "fastify": "^3.21.6 || ^4.0.0"
   }
 }
