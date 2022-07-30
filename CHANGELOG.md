@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.0.4...v5.1.0) (2022-07-30)
+
+
+### Features
+
+* allow fastify v4 as a peer dependency ([7f41e40](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/7f41e40589cb6c64d70b65534084aeeb9a37ee73))
+
 ## [5.0.4](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.0.3...v5.0.4) (2022-06-06)
 
 
