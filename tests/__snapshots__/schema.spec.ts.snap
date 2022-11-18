@@ -8,46 +8,46 @@ exports[`#generateInterfaces should generate and use definitions interface 1`] =
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"body\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"$ref\\": \\"#/definitions/payload/properties\\"
+  "body": {
+    "type": "object",
+    "properties": {
+      "$ref": "#/definitions/payload/properties"
     }
   },
-  \\"headers\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"$ref\\": \\"#/definitions/payload/properties\\"
+  "headers": {
+    "type": "object",
+    "properties": {
+      "$ref": "#/definitions/payload/properties"
     }
   },
-  \\"params\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"$ref\\": \\"#/definitions/payload/properties\\"
+  "params": {
+    "type": "object",
+    "properties": {
+      "$ref": "#/definitions/payload/properties"
     }
   },
-  \\"query\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"$ref\\": \\"#/definitions/payload/properties\\"
+  "query": {
+    "type": "object",
+    "properties": {
+      "$ref": "#/definitions/payload/properties"
     }
   },
-  \\"response\\": {
-    \\"200\\": {
-      \\"type\\": \\"object\\",
-      \\"properties\\": {
-        \\"$ref\\": \\"#/definitions/payload/properties\\"
+  "response": {
+    "200": {
+      "type": "object",
+      "properties": {
+        "$ref": "#/definitions/payload/properties"
       }
     }
   },
-  \\"definitions\\": {
-    \\"payload\\": {
-      \\"properties\\": {
-        \\"test\\": {
-          \\"type\\": \\"boolean\\"
+  "definitions": {
+    "payload": {
+      "properties": {
+        "test": {
+          "type": "boolean"
         }
       }
     }
@@ -100,14 +100,14 @@ exports[`#generateInterfaces should generate body interface 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"body\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"test\\": {
-        \\"type\\": \\"boolean\\"
+  "body": {
+    "type": "object",
+    "properties": {
+      "test": {
+        "type": "boolean"
       }
     }
   }
@@ -145,14 +145,14 @@ exports[`#generateInterfaces should generate headers interface 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"headers\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"test\\": {
-        \\"type\\": \\"boolean\\"
+  "headers": {
+    "type": "object",
+    "properties": {
+      "test": {
+        "type": "boolean"
       }
     }
   }
@@ -190,14 +190,14 @@ exports[`#generateInterfaces should generate params interface 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"params\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"test\\": {
-        \\"type\\": \\"boolean\\"
+  "params": {
+    "type": "object",
+    "properties": {
+      "test": {
+        "type": "boolean"
       }
     }
   }
@@ -235,14 +235,14 @@ exports[`#generateInterfaces should generate query interface 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"query\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"test\\": {
-        \\"type\\": \\"boolean\\"
+  "query": {
+    "type": "object",
+    "properties": {
+      "test": {
+        "type": "boolean"
       }
     }
   }
@@ -280,14 +280,14 @@ exports[`#generateInterfaces should generate query interface 2`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"querystring\\": {
-    \\"type\\": \\"object\\",
-    \\"properties\\": {
-      \\"test\\": {
-        \\"type\\": \\"boolean\\"
+  "querystring": {
+    "type": "object",
+    "properties": {
+      "test": {
+        "type": "boolean"
       }
     }
   }
@@ -325,15 +325,15 @@ exports[`#generateInterfaces should generate reply interface 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"response\\": {
-    \\"200\\": {
-      \\"type\\": \\"object\\",
-      \\"properties\\": {
-        \\"test\\": {
-          \\"type\\": \\"boolean\\"
+  "response": {
+    "200": {
+      "type": "object",
+      "properties": {
+        "test": {
+          "type": "boolean"
         }
       }
     }
@@ -374,7 +374,7 @@ exports[`#generateInterfaces should handle empty schema 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {}
 
@@ -408,10 +408,10 @@ exports[`#generateInterfaces should handle incorrect json schema 1`] = `
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"incorect\\": true
+  "incorect": true
 }
 
 export type Definitions = {}
@@ -444,16 +444,16 @@ exports[`#generateInterfaces should not generate interfaces from unkown keys 1`]
  * Instead, modify the corresponding JSONSchema file and regenerate the types.
  */
 
-import { RouteHandler } from \\"fastify\\"
+import { RouteHandler } from "fastify"
 
 export const schema = {
-  \\"unkown\\": {
-    \\"properties\\": {
-      \\"test\\": {
-        \\"type\\": \\"string\\"
+  "unkown": {
+    "properties": {
+      "test": {
+        "type": "string"
       }
     },
-    \\"type\\": \\"object\\"
+    "type": "object"
   }
 }
 
