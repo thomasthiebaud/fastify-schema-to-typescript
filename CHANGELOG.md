@@ -1,3 +1,20 @@
+# [6.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.1.1...v6.0.0) (2023-04-10)
+
+
+### Bug Fixes
+
+* update dependencies to fix vulnerabilities ([48bdb64](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/48bdb64abca47868c3206f3f3e3b2b268e893251))
+
+
+### chore
+
+* update to node 18 LTS ([97c0db2](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/97c0db2ccb3b824a1664233e855033de97932625))
+
+
+### BREAKING CHANGES
+
+* drop support for node 14. Node 18 LTS is required
+
 ## [5.1.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.1.0...v5.1.1) (2022-11-18)
 
 
