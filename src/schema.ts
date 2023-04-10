@@ -1,5 +1,5 @@
 import fs from "fs";
-import glob from "glob";
+import { globSync } from "glob";
 import yaml from "js-yaml";
 import { compile, Options as CompilerOptions } from "json-schema-to-typescript";
 import path from "path";
@@ -169,7 +169,7 @@ export type ${options.prefix}Handler = RouteHandler<${
 }
 
 export async function convert(options: Options) {
-  const filePaths = glob.sync(options.glob);
+  const filePaths = globSync(options.glob);
   for (const filePath of filePaths) {
     const parsedPath = path.parse(filePath);
     try {
