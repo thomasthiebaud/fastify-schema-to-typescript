@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v6.0.0...v6.0.1) (2023-07-29)
+
+
+### Bug Fixes
+
+* update dependencies to fix vulnerabilities ([ad8b0d1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/ad8b0d124f42e49bb582b0e278df5618fe65b99f))
+
 # [6.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v5.1.1...v6.0.0) (2023-04-10)
 
 
