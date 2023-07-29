@@ -19,11 +19,11 @@ export function capitalize(text: string) {
 export async function writeFile(
   parsedPath: path.ParsedPath,
   template: string,
-  options: Options
+  options: Options,
 ) {
   const write = promisify(fs.writeFile);
   return write(
     path.join(parsedPath.dir, parsedPath.name + options.ext),
-    template
+    template,
   );
 }

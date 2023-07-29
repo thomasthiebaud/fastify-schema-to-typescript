@@ -10,7 +10,7 @@ describe("#generateReplyInterfaces", () => {
   it("should generate the reply interface with an empty schema", async () => {
     expect(await generateReplyInterfaces("")).toEqual("export type Reply = {}");
     expect(await generateReplyInterfaces("XXX")).toEqual(
-      "export type XXXReply = {}"
+      "export type XXXReply = {}",
     );
   });
 
@@ -35,7 +35,7 @@ export type Reply = Reply2XX\
 `;
 
     expect(await generateReplyInterfaces("", schema)).toEqual(
-      genertatedInterface
+      genertatedInterface,
     );
   });
 
@@ -73,7 +73,7 @@ export type Reply = Reply2XX | Reply4XX\
 `;
 
     expect(await generateReplyInterfaces("", schema)).toEqual(
-      genertatedInterface
+      genertatedInterface,
     );
   });
 });
@@ -81,10 +81,10 @@ export type Reply = Reply2XX | Reply4XX\
 describe("#generateDefinitionInterfaces", () => {
   it("should generate the reply interface with an empty schema", async () => {
     expect(await generateDefinitionInterfaces()).toEqual(
-      "export type Definitions = {}"
+      "export type Definitions = {}",
     );
     expect(await generateDefinitionInterfaces({})).toEqual(
-      "export type Definitions = {}"
+      "export type Definitions = {}",
     );
   });
 
@@ -109,7 +109,7 @@ export type Definitions = Test\
 `;
 
     expect(await generateDefinitionInterfaces(schema)).toEqual(
-      genertatedInterface
+      genertatedInterface,
     );
   });
 
@@ -147,7 +147,7 @@ export type Definitions = Test1 | Test2\
 `;
 
     expect(await generateDefinitionInterfaces(schema)).toEqual(
-      genertatedInterface
+      genertatedInterface,
     );
   });
 });
@@ -170,8 +170,8 @@ describe("#generateInterfaces", () => {
             type: "object",
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -181,8 +181,8 @@ describe("#generateInterfaces", () => {
         {
           incorect: true,
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -199,8 +199,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
 
     expect(
@@ -215,8 +215,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -233,8 +233,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -251,8 +251,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -269,8 +269,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -289,8 +289,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -340,8 +340,8 @@ describe("#generateInterfaces", () => {
             },
           },
         },
-        defaultOptions
-      )
+        defaultOptions,
+      ),
     ).toMatchSnapshot();
   });
 });

@@ -11,7 +11,7 @@ const compileOptions: Partial<CompilerOptions> = { bannerComment: "" };
 const defaultSchema = { type: "object", additionalProperties: false };
 
 export function addDefaultValueToSchema(
-  schema: Record<string, any>
+  schema: Record<string, any>,
 ): Record<string, any> {
   return Object.entries(schema).reduce((acc, [key, value]) => {
     if (
@@ -40,13 +40,13 @@ export const defaultOptions = {
 };
 
 export async function generateDefinitionInterfaces(
-  definitions: Record<any, any> = {}
+  definitions: Record<any, any> = {},
 ) {
   const generatedInterfaces = [];
   const generatedReplyNames = [];
 
   for (const [definitionName, definitionSchema] of Object.entries(
-    definitions
+    definitions,
   )) {
     generatedReplyNames.push(capitalize(definitionName));
     generatedInterfaces.push(
@@ -56,8 +56,8 @@ export async function generateDefinitionInterfaces(
           definitions,
         },
         capitalize(definitionName),
-        compileOptions
-      )
+        compileOptions,
+      ),
     );
   }
 
@@ -70,7 +70,7 @@ export type Definitions = ${generatedReplyNames.join(" | ") || "{}"}\
 export async function generateReplyInterfaces(
   prefix: string,
   replies: Record<any, any> = {},
-  definitions: Record<any, any> = {}
+  definitions: Record<any, any> = {},
 ) {
   const generatedInterfaces = [];
   const generatedReplyNames = [];
@@ -83,8 +83,8 @@ export async function generateReplyInterfaces(
           definitions,
         },
         prefix + "Reply" + replyCode.toUpperCase(),
-        compileOptions
-      )
+        compileOptions,
+      ),
     );
   }
 
@@ -120,17 +120,17 @@ ${await compile(
     definitions: schema.definitions,
   },
   options.prefix + "Params",
-  compileOptions
+  compileOptions,
 )}
 ${await compile(
   {
     ...addDefaultValueToSchema(
-      schema.querystring || schema.query || defaultSchema
+      schema.querystring || schema.query || defaultSchema,
     ),
     definitions: schema.definitions,
   },
   options.prefix + "Query",
-  compileOptions
+  compileOptions,
 )}
 ${await compile(
   {
@@ -138,7 +138,7 @@ ${await compile(
     definitions: schema.definitions,
   },
   options.prefix + "Body",
-  compileOptions
+  compileOptions,
 )}
 ${await compile(
   {
@@ -146,12 +146,12 @@ ${await compile(
     definitions: schema.definitions,
   },
   options.prefix + "Headers",
-  compileOptions
+  compileOptions,
 )}
 ${await generateReplyInterfaces(
   options.prefix,
   schema.response,
-  schema.definitions
+  schema.definitions,
 )}
 
 export type ${options.prefix}RouteGeneric = {

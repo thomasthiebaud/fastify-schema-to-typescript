@@ -26,24 +26,24 @@ program
   .option(
     "-g, --glob <value>",
     "glob matching JSON schema to convert",
-    defaultOptions.glob
+    defaultOptions.glob,
   )
   .option(
     "-p, --prefix <value>",
     "prefix to use before interfaces' name",
     parsePrefix,
-    defaultOptions.prefix
+    defaultOptions.prefix,
   )
   .option(
     "-e, --ext <value>",
     "file extension to use for generated files",
     parseExtension,
-    defaultOptions.ext
+    defaultOptions.ext,
   )
   .option(
     "-m, --module <value>",
     "module to import the RouteHandler type from",
-    defaultOptions.module
+    defaultOptions.module,
   );
 
 program.parse(process.argv);
