@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v6.0.1...v7.0.0) (2023-12-17)
+
+
+### chore
+
+* drop node v18 support and update dependencies ([4b17380](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/4b17380c87d344e5e020933e963e311847a9fca2))
+
+
+### BREAKING CHANGES
+
+* drop support to node v18. New minimal node version is nodejs v20
+
 ## [6.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v6.0.0...v6.0.1) (2023-07-29)
 
 
