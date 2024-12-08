@@ -1,3 +1,13 @@
+# [8.0.0](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v7.0.1...v8.0.0) (2024-12-08)
+
+
+* chore!: drop support for Node 18 and 20 ([aae6e7c](https://github.com/thomasthiebaud/fastify-schema-to-typescript/commit/aae6e7cf63d3d653f18ea7c484e70823e9160dd3))
+
+
+### BREAKING CHANGES
+
+* drop support for Node 18 and 20 and require Node 22 LTS or more recent
+
 ## [7.0.1](https://github.com/thomasthiebaud/fastify-schema-to-typescript/compare/v7.0.0...v7.0.1) (2024-12-08)
 
 
